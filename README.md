@@ -20,7 +20,7 @@ However, if you intend to run the environment used for comparative experiments i
 
 # Explanation of files in this repository
 
-1. data_loader.py
+1. ATOA_data_loader_2d.py
     Used to specify the path and method for loading the training/testing dataset.
    
 3. AE_R_3d_CNN/CNN_3d.py
