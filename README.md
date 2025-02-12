@@ -48,6 +48,43 @@ The main file for testing the trained ATOA model contains all the necessary modu
 # How to Run
 1. Assuming paths to demonstration dataset is declared, run the following file to train your ATOA model:
   python ATOA/train.py
+Here’s the translation of your provided content:
+
+---
+
+    Before training, the following parameters may need to be modified according to user requirements:
+    
+    In `ATOA_train.py`:
+       (Optional)
+       (1) Modify the storage location of the result file:
+       ```
+       parser.add_argument('--model_path', type=str, default='./Result', help='path for saving trained models')
+       ```
+       (2) Modify the training set parameters, the default values are N=35, NP=200:
+       ```
+       parser.add_argument('--load_data_N', type=int, default=35)
+       parser.add_argument('--load_data_NP', type=int, default=200)
+       ```
+       (3) Modify the dropout parameter size:
+       ```
+       parser.add_argument('--dropout_p', type=float , default=0.5, help='The probability of dropout')
+       ```
+       (4) Modify the cost function `ek` parameter:
+       ```
+       parser.add_argument('--ek', type=float, default=4, help='parameter of loss_function')
+       ```
+       (5) Modify the saved file name:
+       ```
+       model_path='new_mlp_cross_mask_concave2d_epoch=%d_N_%d_Np_%d_Dropout=%.3f_k3=%.3f_ek=%.3f'
+       ```
+       (6) Modify the `sm` parameter, i.e., how many epochs before saving the model again.
+    
+     In `ATOA_data_loader_2d.py`, you can specify all file save and load paths.
+
+---
+
+
+
 2. Assuming paths to demonstration dataset and the trained model are declared, run to test the model:
   python ATOA/test.py
 
