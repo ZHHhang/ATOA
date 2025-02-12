@@ -19,16 +19,32 @@ ATOA can be reliably run on multiple versions of Ubuntu. Testing has confirmed t
 However, if you intend to run the environment used for comparative experiments in ATOA (Motionbenchmaker), it is recommended to use Ubuntu 20.04 or later. This is because the MoveIt version in ROS for Ubuntu 18.04 does not include advanced motion planners such as BIT* and AIT*.
 
 # Explanation of files in this repository
+
 1. data_loader.py
-2. AE_R_3d_CNN/CNN_3d.py
-3. model_R_3D.py
-4. neuralplanner.py
+    Used to specify the path and method for loading the training/testing dataset.
+   
+3. AE_R_3d_CNN/CNN_3d.py
+    This file contains a model with an environment encoder.
+   
+4. model_R_3D.py
+    This file contains a model of the motion planner.
+   
 5. train_new_orientation_crossentropy_R_3D.py
 The main file for training contains all the necessary loss functions and training parameters required for the training process.  
     Before training starts, `train.py` will:  
     - Load data from `data_loader.py`  
     - Load the **environment encoder model** from `AE_R_3d_CNN/CNN_3d.py`  
-    - Load the **motion planner model** from `model_R_3D.py`   
+    - Load the **motion planner model** from `model_R_3D.py`
+      
+6. neuralplanner.py
+The main file for testing the trained ATOA model contains all the necessary modules required for the testing process. The CDPC replanning module is also included in this file.  
+    Before testing starts, `test.py` will:  
+    - Load the test data from `data_loader.py`  
+    - Load the environment encoder model from `AE_R_3d_CNN/CNN_3d.py`  
+    - Load the motion planner model from `model_R_3D.py`    
+    Note:  
+    The CDPC module has not yet been encapsulated as an interface function in `test.py` and currently exists as separate function calls. We will improve this and upload a more readable version of the code.
+    
 # How to Run
 1. Assuming paths to demonstration dataset is declared, run the following file to train your ATOA model:
   python ATOA/train.py
