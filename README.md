@@ -2,13 +2,14 @@
 Adaptive Trajectory Learning with Obstacle Awareness (ATOA) is a framework for motion planning.
 ATOA allows the network to adaptively predict intermediate states, with the potential for more efficient planning solutions. Obstacle information is explicitly integrated by penalizing predictions with obstacle collisions. CDPC module resolves infeasible paths by exploring alternative routes based on direction confidences. 
 
-# What does this repository contain
+# What does the ATOA folder contain 
 
-This repository:
 1. Contains the file `train.py` used for training ATOA.  
-2. Contains the file `test.py` used for testing ATOA.  
-3. Contains the remaining Python files used in conjunction with `train.py` and `test.py`.  
-4. Will soon include dataset files for training.
+2. Contains the file `test.py` used for testing ATOA.
+3. Contains the file exp/train/ATOA_train.sh, which is used to quickly complete the parameter configuration for the ATOA training file train.py and to launch the ATOA training file.
+4. Contains the file exp/train/ATOA_test.sh, which is used to quickly complete the parameter configuration for the ATOA test file test.py and to launch the ATOA test file.
+5. Contains the remaining Python files used in conjunction with `train.py` and `test.py`.  
+6. Will soon include dataset files for training.
 
 # Dependencies/Instalation
 ATOA
