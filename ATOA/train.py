@@ -844,8 +844,8 @@ if __name__ == '__main__':
 	
 	
 	#data size for load and test
-	parser.add_argument('--load_data_N', type=int, default=10)
-	parser.add_argument('--load_data_NP', type=int, default=4)
+	parser.add_argument('--load_data_N', type=int, default=30)
+	parser.add_argument('--load_data_NP', type=int, default=200)
 	parser.add_argument('--s', type=int, default=0,help='test seen environment')
 	parser.add_argument('--sp', type=int, default=0,help='test seen environment')
 
