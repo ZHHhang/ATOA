@@ -9,7 +9,7 @@ ATOA allows the network to adaptively predict intermediate states, with the pote
 3. Contains the file exp/train/ATOA_train.sh, which is used to quickly complete the parameter configuration for the ATOA training file train.py and to launch the train.py.
 4. Contains the file exp/train/ATOA_test.sh, which is used to quickly complete the parameter configuration for the ATOA test file test.py and to launch the test.py.
 5. Contains the remaining Python files used in conjunction with `train.py` and `test.py`.  
-6. Will soon include dataset files for training.
+6. The upcoming content will include datasets for training and relevant code for higher-dimensional planning problems.
 
 # Dependencies/Instalation
 Ubuntu+Cuda+Pytorch
