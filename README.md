@@ -78,7 +78,7 @@ The main file for testing the trained ATOA model contains all the necessary modu
            ```
            (2) Modify the training set parameters, the default values are N=35, NP=200:
            ```
-           parser.add_argument('--load_data_N', type=int, default=35)
+           parser.add_argument('--load_data_N', type=int, default=30)
            parser.add_argument('--load_data_NP', type=int, default=200)
            ```
            (3) Modify the dropout parameter size:
