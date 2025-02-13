@@ -53,12 +53,14 @@ The main file for testing the trained ATOA model contains all the necessary modu
 1. Train and test using the .sh script files (recommended).
 
     (1)  Assuming the path to the demonstration dataset has been declared, run the following script to train your ATOA model and specify the required important parameters:
-     bash ATOA/exp/train/ATOA_train.sh
+
+        bash ATOA/exp/train/ATOA_train.sh
    
     (2)  Assuming the path to the demonstration dataset and the trained model have been declared, run the following script to test your ATOA model and specify the required important parameters:
-     bash ATOA/exp/test/ATOA_test.sh
+
+        bash ATOA/exp/test/ATOA_test.sh
    
-2. Train using the original Python file.
+3. Train using the original Python file.
 
     (1). Assuming paths to demonstration dataset is declared, run the following file to train your ATOA model:
       python ATOA/train.py
