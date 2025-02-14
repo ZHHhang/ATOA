@@ -86,7 +86,19 @@ def new_norm_loss(x, a, b, c):
 # def norm_loss_relu(magnitude, target_magnitude=25, scale=0.1):
 #     loss = scale * (target_magnitude - magnitude)
 #     # return loss
-#     return torch.relu(loss)  
+#     return torch.relu(loss) 
+
+def norm_loss_2(tilde_x, x_c, x_points, k1=1.0, k2=1.0):
+   
+    distance_tilde_x_xc = torch.norm(tilde_x - x_c, p=2)  #  ||tilde_x - x_c||_2
+    distance_sum = sum(torch.norm(x_points[i + 1] - x_points[i], p=2) for i in range(len(x_points) - 1))  #  Σ ||x_{i+1} - x_i||_2
+    delta = distance_tilde_x_xc / distance_sum  
+     
+    alpha = k2 if delta > 1 else 0 
+    log_term = torch.log1p(torch.exp(-k1 * (delta - 1)))  # log(1 + exp(-k1 * (delta - 1)))
+    loss = log_term + alpha * (delta - 1)  # L_norm = log_term + alpha * (delta - 1)
+    
+    return loss
 
 def norm_loss_relu(x,distance_left):
     epsilon = 1e-10
