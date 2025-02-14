@@ -4,11 +4,11 @@ ATOA allows the network to adaptively predict intermediate states, with the pote
 
 # What does the ATOA folder contain 
 
-1. Contains the file `train.py` used for training ATOA.  
-2. Contains the file `test.py` used for testing ATOA.
-3. Contains the file exp/train/ATOA_train.sh, which is used to quickly complete the parameter configuration for the ATOA training file train.py and to launch the train.py.
-4. Contains the file exp/train/ATOA_test.sh, which is used to quickly complete the parameter configuration for the ATOA test file test.py and to launch the test.py.
-5. Contains the remaining Python files used in conjunction with `train.py` and `test.py`.  
+1. Contains the file `ATOA/train.py` used for training ATOA.  
+2. Contains the file `ATOA/test.py` used for testing ATOA.
+3. Contains the file `ATOA/exp/train/ATOA_train.sh`, which is used to quickly complete the parameter configuration for the ATOA training file train.py and to launch the train.py.
+4. Contains the file `ATOA/exp/train/ATOA_test.sh`, which is used to quickly complete the parameter configuration for the ATOA test file test.py and to launch the test.py.
+5. Contains the remaining Python files used in conjunction with `ATOA/train.py` and `ATOA/test.py`.  
 6. The upcoming content will include datasets for training and relevant code for higher-dimensional planning problems.
 
 # Dependencies/Instalation
@@ -20,31 +20,31 @@ However, if you intend to run the environment used for comparative experiments i
 
 # Explanation of files in this repository
 
-1. data_loader.py
+1. ATOA/data_loader.py
     Used to specify the path and method for loading the training/testing dataset.
    
-2. AE_R_3d_CNN/CNN_3d.py
+2. ATOA/AE_R_3d_CNN/CNN_3d.py
     This file contains a model with an 3D-environment encoder.
 
-3. AE_concave_2d_CNN/CNN_2d.py
+3. ATOA/AE_concave_2d_CNN/CNN_2d.py
     This file contains a model with an 2D-environment encoder.
    
-4. model.py
+4. ATOA/model.py
     This file contains a model of the motion planner.
    
-6. train.py
+6. ATOA/train.py
 The main file for training contains all the necessary loss functions and training parameters required for the training process.  
-    Before training starts, `train.py` will:  
-    - Load data from `data_loader.py`  
-    - Load the environment encoder model from `AE_R_3d_CNN/CNN_3d.py` 
-    - Load the motion planner model from `model.py`
+    Before training starts, `ATOA/train.py` will:  
+    - Load data from `ATOA/data_loader.py`  
+    - Load the environment encoder model from `ATOA/AE_R_3d_CNN/CNN_3d.py` 
+    - Load the motion planner model from `ATOA/model.py`
       
-7. neuralplanner.py
+7. ATOA/neuralplanner.py
 The main file for testing the trained ATOA model contains all the necessary modules required for the testing process. The CDPC replanning module is also included in this file.  
-    Before testing starts, `test.py` will:  
-    - Load the test data from `data_loader.py`  
-    - Load the environment encoder model from `AE_R_3d_CNN/CNN_3d.py`  
-    - Load the motion planner model from `model.py`    
+    Before testing starts, `ATOA/test.py` will:  
+    - Load the test data from `ATOA/data_loader.py`  
+    - Load the environment encoder model from `ATOA/AE_R_3d_CNN/CNN_3d.py`  
+    - Load the motion planner model from `ATOA/model.py`    
     Note:  
     The CDPC module has not yet been encapsulated as an interface function in `test.py` and currently exists as separate function calls. We will improve this and upload a more readable version of the code.
     
@@ -70,7 +70,7 @@ The main file for testing the trained ATOA model contains all the necessary modu
     
         Before training, the following parameters may need to be modified according to user requirements:
         
-        In `ATOA_train.py`:
+        In `ATOA/train.py`:
            (Optional)
            (1) Modify the storage location of the result file:
            ```
@@ -95,7 +95,7 @@ The main file for testing the trained ATOA model contains all the necessary modu
            ```
            (6) Modify the `sm` parameter, i.e., how many epochs before saving the model again.
         
-         In `ATOA_data_loader_2d.py`, you can specify all file save and load paths.
+         In `ATOA/data_loader.py`, you can specify all file save and load paths.
     
     ---
     
