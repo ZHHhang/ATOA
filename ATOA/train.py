@@ -79,9 +79,9 @@ Cross_loss_phi = nn.CrossEntropyLoss()
 Cross_loss_theta_test = nn.CrossEntropyLoss()
 Cross_loss_phi_test = nn.CrossEntropyLoss()
 
-def new_norm_loss(x, a, b, c):
-    sqrt_2 = torch.sqrt(torch.tensor(2.0)) 
-    return  (a * torch.exp(-b * x) + c * torch.log(1 + torch.exp(x - 40 * sqrt_2)))
+# def new_norm_loss(x, a, b, c):
+#     sqrt_2 = torch.sqrt(torch.tensor(2.0)) 
+#     return  (a * torch.exp(-b * x) + c * torch.log(1 + torch.exp(x - 40 * sqrt_2)))
 
 # def norm_loss_relu(magnitude, target_magnitude=25, scale=0.1):
 #     loss = scale * (target_magnitude - magnitude)
