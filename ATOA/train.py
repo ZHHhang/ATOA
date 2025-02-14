@@ -88,7 +88,7 @@ Cross_loss_phi_test = nn.CrossEntropyLoss()
 #     # return loss
 #     return torch.relu(loss) 
 
-def norm_loss_2(tilde_x, x_c, x_points, k1=1.0, k2=1.0):
+def norm_loss_2(tilde_x, x_c, x_points, k1, k2=1.0):
    
     distance_tilde_x_xc = torch.norm(tilde_x - x_c, p=2)  #  ||tilde_x - x_c||_2
     distance_sum = sum(torch.norm(x_points[i + 1] - x_points[i], p=2) for i in range(len(x_points) - 1))  #  Σ ||x_{i+1} - x_i||_2
