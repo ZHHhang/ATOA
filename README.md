@@ -107,4 +107,7 @@ The main file for testing the trained ATOA model contains all the necessary modu
 # References
 If you use ATOA please consider citing our corresponding article:
 
-Comming soon
+H. Zheng, Z. Tan, J. Wang and M. Tavakoli, "Adaptive Trajectory Learning With Obstacle Awareness for Motion Planning," in IEEE Robotics and Automation Letters, vol. 10, no. 4, pp. 3884-3891, April 2025, doi: 10.1109/LRA.2025.3544491.
+
+
+
